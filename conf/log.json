@@ -1,0 +1,17 @@
+{
+    "LogLevel" : "trace",
+
+    "FileWriter" : {
+        "On": true,
+
+        "LogPath" : "./log/sior.log.info",
+        "RotateLogPath" : "./log/sior.log.info.%Y%M%D%H",
+
+        "WfLogPath" : "./log/sior.log.wf",
+        "RotateWfLogPath" : "./log/sior.log.wf.%Y%M%D%H"
+    },
+
+    "ConsoleWriter" : {
+        "On" : false
+    }
+}
