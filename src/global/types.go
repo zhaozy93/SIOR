@@ -6,10 +6,11 @@ type Config struct {
 		LogFile string
 	}
 	Raft struct {
-		Heartbeat          int
-		HeartbeatTimeout   int
-		ElectionTimeoutMin int
-		ElectionTimeoutMax int
+		Heartbeat           int
+		HeartbeatTimeout    int
+		ElectionTimeoutMin  int
+		ElectionTimeoutMax  int
+		ElectionVoteTimeout int
 	}
 	Hosts struct {
 		Cluster []string

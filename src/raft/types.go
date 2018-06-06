@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"sync"
 	"sync/atomic"
-	"time"
 )
 
 var raftClient *Raft
@@ -16,15 +15,15 @@ const (
 )
 
 type Raft struct {
-	Property      *RaftProperty
-	Status        int
-	HeartbeatChan chan bool
-	Term          uint64
-	Clusters      []string // 集群中的iplist
-	LastVote      *VoteProperty
-	LastTtl       *TtlProperty
-	IsTry2Leader  bool
-	locker        sync.Mutex
+	Property        *RaftProperty
+	Status          int
+	HeartbeatChan   chan uint64
+	Term            uint64
+	Clusters        []string // 集群中的iplist
+	LastVote        *VoteProperty
+	LastTtl         *TtlProperty
+	IsTry2Leadering bool
+	locker          sync.Mutex
 }
 
 type RaftProperty struct {
@@ -40,6 +39,10 @@ type VoteProperty struct {
 type TtlProperty struct {
 	Term uint64
 	Time int64
+}
+
+func (client *Raft) UpdateTerm(term uint64) {
+	client.Term = term
 }
 
 func (client *Raft) IsFollower() bool {
@@ -73,25 +76,13 @@ func (client *Raft) HasVote(term uint64) bool {
 		fmt.Println("leader not vote")
 		return true
 	}
-	lastTime := client.LastVote.Time
-	nowTime := time.Now().UnixNano()
-	lastTtlTime := client.LastTtl.Time
-	// if nowTime-lastTime > 5000 {
-	// 	fmt.Println("leader not vote")
-	// }
-	// if nowTime-lastTtlTime > 100000 {
-
-	// }
-	if nowTime-lastTime > 500000 && nowTime-lastTtlTime > 100000 {
-		client.LastVote = &VoteProperty{
-			Term: term,
-			Time: time.Now().UnixNano(),
-		}
-		return false
-	} else {
+	lastVoteTerm := client.LastVote.Term
+	if lastVoteTerm >= term {
 		return true
 	}
-
+	client.LastVote.Term = term
+	client.UpdateTerm(term)
+	return false
 }
 
 func (client *Raft) AddTerm() {

@@ -23,14 +23,16 @@ func NewRaftClient() *Raft {
 	client := &Raft{
 		Property:      property,
 		Status:        follower,
-		HeartbeatChan: make(chan bool),
+		HeartbeatChan: make(chan uint64),
 		Term:          uint64(0),
 		Clusters:      global.Cfg.Hosts.Cluster,
 		LastTtl: &TtlProperty{
 			Time: 0,
+			Term: uint64(0),
 		},
 		LastVote: &VoteProperty{
 			Time: 0,
+			Term: uint64(0),
 		},
 	}
 	return client
@@ -56,15 +58,15 @@ func (client *Raft) candidateChecker() {
 		// follower状态，长时间未收到ttl，则尝试变为Candidate
 		case <-try2Candidate_timer.C:
 			try2Candidate_timer.Reset(circle)
-			// 只有Follower允许尝试变Candidate
-			if !client.IsFollower() || client.IsTry2Leader {
+			// Leader不允许尝试变为Candidate
+			if client.IsLeader() || client.IsTry2Leadering {
 				break
 			}
 			fmt.Println("try to swicth candidate")
 			client.switch2Candidate()
 			client.AddTerm()
 			go client.try2Leader()
-		case <-client.HeartbeatChan:
+		case term := <-client.HeartbeatChan:
 			try2Candidate_timer.Reset(circle)
 			if client.IsLeader() {
 				break
@@ -74,17 +76,20 @@ func (client *Raft) candidateChecker() {
 			}
 			fmt.Println("receive ttl from leader, still stay in follow status")
 			client.switch2Follower()
+			client.UpdateTerm(term)
 		}
 	}
 }
 
+// 投票环节
+// 拿到多数票就变为Leader 否则继续作为Candidate
 func (client *Raft) try2Leader() {
 	// 正在进行vote或者不是Candidate不能进行try2Leader
-	if client.IsTry2Leader || !client.IsCandidater() {
+	if client.IsTry2Leadering || !client.IsCandidater() {
 		return
 	}
-	client.IsTry2Leader = true
-	td := time.Duration(time.Duration(500) * time.Millisecond)
+	client.IsTry2Leadering = true
+	td := time.Duration(time.Duration(global.Cfg.Raft.ElectionVoteTimeout) * time.Millisecond)
 	voteCnt := 0
 	for _, v := range client.Clusters {
 		httpClient := &http.Client{
@@ -103,12 +108,14 @@ func (client *Raft) try2Leader() {
 		url := fmt.Sprintf("http://%s/getVote?term=%d", v, client.GetTerm())
 		resp, err := httpClient.Get(url)
 		if err != nil {
+			// fmt.Println(err.Error())
 			continue
 		}
 		defer resp.Body.Close()
 		body, berr := ioutil.ReadAll(resp.Body)
 		if berr != nil {
-			return
+			// fmt.Println(berr.Error())
+			continue
 		}
 		result := string(body)
 		if result == "true" {
@@ -118,14 +125,11 @@ func (client *Raft) try2Leader() {
 	if float64(voteCnt)/float64(len(client.Clusters)) > 0.5 {
 		client.switch2Leader()
 		go client.startLeaderWork()
-		client.IsTry2Leader = false
-		return
+		fmt.Printf("swicth to leader success voteCnt: %d of %d\n", voteCnt, len(client.Clusters))
 	} else {
-		fmt.Println("still try to candidate")
-		// time.Sleep(time.Second * 1)
-		client.IsTry2Leader = false
-		client.try2Leader()
+		fmt.Printf("still in candidate status voteCnt: %d of %d\n", voteCnt, len(client.Clusters))
 	}
+	client.IsTry2Leadering = false
 }
 
 func (client *Raft) startLeaderWork() {
@@ -138,13 +142,12 @@ func (client *Raft) startLeaderWork() {
 			if !client.IsLeader() {
 				return
 			}
-			fmt.Println("leader worker: send ttl to cluster")
+			fmt.Printf("leader worker: send ttl to cluster with term: %d\n", client.GetTerm())
 			for _, v := range client.Clusters {
 				fmt.Println(v, global.FinalPort)
 				if strings.Index(v, global.FinalPort) != -1 {
 					continue
 				}
-				// fmt.Printf("send ttl to %s\n", v)
 				httpClient := &http.Client{
 					Transport: &http.Transport{
 						Dial: func(netw, addr string) (net.Conn, error) {

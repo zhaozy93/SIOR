@@ -1,0 +1,104 @@
+2018/06/06 21:59:59 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 21:59:59 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:01:46 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:01:46 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:02:37 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:02:37 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:02:55 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:02:55 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:04:07 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:04:07 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:04:06 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:04:06 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:04:10 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:04:10 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:04:11 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:04:11 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:04:12 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:04:12 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:07:52 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:07:52 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:08:50 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:08:50 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:09:49 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:09:49 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:10:19 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:10:19 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:10:43 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:10:43 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:13:13 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:13:13 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:13:36 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:13:36 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:13:40 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:13:40 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:13:41 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:42 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:13:42 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:13:42 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:42 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:42 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:43 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:44 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:43 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:44 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:44 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:45 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:44 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:45 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:45 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:46 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:45 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:46 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:46 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:47 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:46 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:47 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:47 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:48 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:47 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:48 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:48 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:49 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:48 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:49 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:49 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:50 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:49 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:50 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:50 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:51 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:50 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:51 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:51 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:52 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:51 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:52 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:52 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:53 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:52 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:13:53 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:14:00 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:14:00 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:14:01 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:14:01 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:14:02 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:14:02 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:14:03 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:14:03 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:14:04 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:14:04 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:14:05 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:14:05 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:14:06 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:14:06 [INFO] <receivettlHandler.go:16> 收到leader ttl
+2018/06/06 22:39:12 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:39:12 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:43:12 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:43:12 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:49:13 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:49:13 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:49:18 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:49:18 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 22:49:20 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 22:49:20 [INFO] <httpserver.go:38> run http server with addr::8888
