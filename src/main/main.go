@@ -13,6 +13,7 @@ import (
 	"httpserver"
 	"initSrv"
 	"os"
+	"raft"
 	"runtime"
 )
 
@@ -35,5 +36,8 @@ func main() {
 	fmt.Println(helloStr)
 	logger.Info(helloStr)
 	//runc http server
+
+	raft.InitRaftClient()
 	httpserver.RunHttpServer()
+
 }

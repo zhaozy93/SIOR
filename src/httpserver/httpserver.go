@@ -4,7 +4,7 @@ import (
 	"fmt"
 	logger "github.com/shengkehua/xlog4go"
 	"global"
-	"helper/context"
+	"httplogic"
 	"net/http"
 	"strconv"
 )
@@ -36,10 +36,23 @@ func (s *SServer) Run() {
 	}
 
 	logger.Info("run http server with addr:%s", addr)
-	if err := http.ListenAndServe(addr, mux); err != nil {
-		//端口占用导致监听失败，sleep 2秒重试一次
-		logger.Error("run http server fail:%s", err.Error())
+
+	for i := 0; i < 5; i++ {
+		addr = ":" + strconv.Itoa(s.port+i)
+		global.FinalPort = addr
+		if err := http.ListenAndServe(addr, mux); err != nil {
+			//端口占用导致监听失败，sleep 2秒重试一次
+			// logger.Error("run http server fail:%s", err.Error())
+			fmt.Printf("listening port error %s\n", addr)
+		} else {
+			fmt.Printf("listening port %s\n", addr)
+			return
+		}
 	}
+	// if err := http.ListenAndServe(addr, mux); err != nil {
+	// 	//端口占用导致监听失败，sleep 2秒重试一次
+	// 	logger.Error("run http server fail:%s", err.Error())
+	// }
 }
 
 func RunHttpServer() {
@@ -47,11 +60,9 @@ func RunHttpServer() {
 
 	// s.Register(global.IF_ASYNCBYAREA, GetDriverByAreaAsyncHandler)
 
-	s.Register("testHttp", "/test", test)
-	s.Run()
-}
+	// s.Register("testHttp", "/test", test)
+	s.Register("receiveHeartbeatChan", "/ttl", httplogic.ReceivettlHandler)
+	s.Register("vote", "/getVote", httplogic.VoteHandler)
 
-func test(w http.ResponseWriter, r *http.Request, c *context.Context) int {
-	fmt.Fprint(w, "test")
-	return 0
+	s.Run()
 }

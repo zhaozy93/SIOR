@@ -1,0 +1,223 @@
+2018/06/06 12:46:47 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 12:46:47 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 12:49:05 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 12:49:05 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 12:49:55 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 12:49:55 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 12:50:28 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 12:50:28 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 12:50:40 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 12:50:40 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 12:50:42 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 12:50:42 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 12:50:44 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 12:50:44 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 12:50:45 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 12:50:45 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 12:50:47 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 12:50:47 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 13:07:09 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 13:07:09 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 13:08:19 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 13:08:19 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 13:16:34 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 13:16:34 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 13:17:22 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 13:17:22 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 13:17:25 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:33 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:36 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:54 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:54 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:54 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:55 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:55 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:55 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:55 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:55 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:55 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:56 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:56 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:56 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:56 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:57 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:57 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:57 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:57 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:57 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:57 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:58 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:58 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:58 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:58 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:58 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:59 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:59 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:59 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:17:59 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:03 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:03 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:03 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:04 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:04 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:04 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:04 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:04 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:05 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:05 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:05 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:05 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:05 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:05 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:06 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:06 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:06 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:06 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:06 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:06 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:07 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:07 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:07 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:07 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:07 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:07 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:08 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:08 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:18:08 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:07 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:07 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:08 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:08 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:08 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:08 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:08 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:09 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:51 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 13:19:51 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 13:19:53 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:55 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:55 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:55 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:56 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:56 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:56 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:56 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:56 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:56 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:57 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:57 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:57 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:57 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:57 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:58 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:58 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:58 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:58 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:58 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:59 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:59 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:19:59 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:20:00 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:20:00 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:20:00 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:20:00 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:20:00 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:20:01 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:20:28 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 13:20:28 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 13:20:29 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:20:30 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:20:30 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:20:31 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:20:31 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:20:31 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:20:31 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:20:31 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:20:32 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:10 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 13:21:10 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 13:21:12 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:13 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:14 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:14 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:14 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:14 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:14 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:15 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:15 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:15 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:15 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:15 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:15 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:16 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:16 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:16 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:16 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:16 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:16 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:17 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:17 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:17 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:17 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:17 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:18 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:18 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:18 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:18 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:18 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:19 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:19 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:19 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:20 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:20 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:21 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:21 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:21 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:22 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:22 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:22 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:23 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:23 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:23 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:24 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:24 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:21:24 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:24:47 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 13:24:47 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 13:24:49 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:24:49 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:24:49 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:24:50 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:24:50 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:24:50 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:24:51 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:24:51 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:24:51 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:24:52 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 13:24:52 [INFO] <httplogic.go:16> 收到leader ttl
+2018/06/06 16:02:19 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 16:02:19 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 16:34:29 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 16:34:29 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 16:35:55 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 16:35:55 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 16:36:31 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 16:36:31 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 16:42:37 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 16:42:37 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 16:43:04 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 16:43:04 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 16:43:22 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 16:43:22 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 16:43:38 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 16:43:38 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 16:44:23 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 16:44:23 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 16:44:56 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 16:44:56 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 16:45:17 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 16:45:17 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 16:46:21 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 16:46:21 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/06 16:47:24 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/06 16:47:24 [INFO] <httpserver.go:38> run http server with addr::8888
