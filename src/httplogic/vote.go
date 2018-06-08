@@ -15,8 +15,8 @@ import (
 func VoteHandler(w http.ResponseWriter, r *http.Request, c *context.Context) int {
 	// fmt.Println("receive vote request")
 	client := raft.GetRaftClient()
-	// fmt.Println("收到vote请求")
 	// 如果他自己就是leader则不允许给其他candidate投票
+	// 按理来说这种现象是不会出现的
 	if client.IsLeader() {
 		fmt.Fprint(w, "false")
 		// fmt.Println("leader status, vote false。 term: null")

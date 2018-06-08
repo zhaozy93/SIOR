@@ -7,14 +7,12 @@ import (
 	"math/rand"
 	"net"
 	"net/http"
-	"strings"
 	"time"
 )
 
 func NewRaftClient() *Raft {
 	rand.Seed(time.Now().UnixNano())
 	randomTime := int(rand.Int31n(int32(global.Cfg.Raft.ElectionTimeoutMax - global.Cfg.Raft.ElectionTimeoutMin)))
-	fmt.Println("random", randomTime)
 	property := &RaftProperty{
 		Heartbeat:        global.Cfg.Raft.Heartbeat,
 		HeartbeatTimeout: global.Cfg.Raft.HeartbeatTimeout,
@@ -23,17 +21,22 @@ func NewRaftClient() *Raft {
 	client := &Raft{
 		Property:      property,
 		Status:        follower,
-		HeartbeatChan: make(chan uint64),
+		HeartbeatChan: make(chan *TTLer),
 		Term:          uint64(0),
 		Clusters:      global.Cfg.Hosts.Cluster,
+		Host:          global.IPPort,
 		LastTtl: &TtlProperty{
-			Time: 0,
-			Term: uint64(0),
+			Time:   0,
+			Term:   uint64(0),
+			Leader: "",
 		},
 		LastVote: &VoteProperty{
 			Time: 0,
 			Term: uint64(0),
 		},
+		Data:        make(map[string]string),
+		WaitingData: make(map[string]string),
+		JustADD:     make(map[string]string),
 	}
 	return client
 }
@@ -41,6 +44,7 @@ func NewRaftClient() *Raft {
 func InitRaftClient() {
 	raftClient = NewRaftClient()
 	go raftClient.candidateChecker()
+	// go raftClient.httpLogic()
 }
 
 func GetRaftClient() *Raft {
@@ -66,17 +70,19 @@ func (client *Raft) candidateChecker() {
 			client.switch2Candidate()
 			client.AddTerm()
 			go client.try2Leader()
-		case term := <-client.HeartbeatChan:
+		case ttler := <-client.HeartbeatChan:
 			try2Candidate_timer.Reset(circle)
 			if client.IsLeader() {
 				break
 			}
 			client.LastTtl = &TtlProperty{
-				Time: time.Now().UnixNano(),
+				Time:   time.Now().UnixNano(),
+				Term:   ttler.Term,
+				Leader: ttler.Leader,
 			}
 			fmt.Println("receive ttl from leader, still stay in follow status")
 			client.switch2Follower()
-			client.UpdateTerm(term)
+			client.UpdateTerm(ttler.Term)
 		}
 	}
 }
@@ -132,39 +138,22 @@ func (client *Raft) try2Leader() {
 	client.IsTry2Leadering = false
 }
 
-func (client *Raft) startLeaderWork() {
-	circle := time.Millisecond * time.Duration(client.Property.Heartbeat)
-	leaderTtl_timer := time.NewTimer(circle)
-	td := time.Duration(time.Duration(client.Property.HeartbeatTimeout) * time.Millisecond)
-	for {
-		select {
-		case <-leaderTtl_timer.C:
-			if !client.IsLeader() {
-				return
-			}
-			fmt.Printf("leader worker: send ttl to cluster with term: %d\n", client.GetTerm())
-			for _, v := range client.Clusters {
-				fmt.Println(v, global.FinalPort)
-				if strings.Index(v, global.FinalPort) != -1 {
-					continue
-				}
-				httpClient := &http.Client{
-					Transport: &http.Transport{
-						Dial: func(netw, addr string) (net.Conn, error) {
-							conn, err := net.DialTimeout(netw, addr, td)
-							if err != nil {
-								return nil, err
-							}
-							conn.SetDeadline(time.Now().Add(td))
-							return conn, nil
-						},
-						ResponseHeaderTimeout: td,
-					},
-				}
-				url := fmt.Sprintf("http://%s/ttl?term=%d", v, client.GetTerm())
-				httpClient.Get(url)
-			}
-			leaderTtl_timer.Reset(circle)
-		}
-	}
-}
+// 启动一个协程来处理来自http的请求，例如投票
+// 解耦http接口
+// func (client *Raft) httpLogic() {
+// 	for {
+// 		select {
+// 		case term := <-client.HeartbeatChan:
+// 			try2Candidate_timer.Reset(circle)
+// 			if client.IsLeader() {
+// 				break
+// 			}
+// 			client.LastTtl = &TtlProperty{
+// 				Time: time.Now().UnixNano(),
+// 			}
+// 			fmt.Println("receive ttl from leader, still stay in follow status")
+// 			client.switch2Follower()
+// 			client.UpdateTerm(term)
+// 		}
+// 	}
+// }

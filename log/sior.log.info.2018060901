@@ -1,0 +1,4 @@
+2018/06/09 01:59:17 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/09 01:59:17 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/09 01:59:21 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/09 01:59:21 [INFO] <httpserver.go:38> run http server with addr::8888

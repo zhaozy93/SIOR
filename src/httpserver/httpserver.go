@@ -40,7 +40,9 @@ func (s *SServer) Run() {
 	for i := 0; i < 5; i++ {
 		addr = ":" + strconv.Itoa(s.port+i)
 		global.FinalPort = addr
-		if err := http.ListenAndServe(addr, mux); err != nil {
+		global.SetIPPort(strconv.Itoa(s.port + i))
+		err := http.ListenAndServe(addr, mux)
+		if err != nil {
 			//端口占用导致监听失败，sleep 2秒重试一次
 			// logger.Error("run http server fail:%s", err.Error())
 			fmt.Printf("listening port error %s\n", addr)
@@ -63,6 +65,8 @@ func RunHttpServer() {
 	// s.Register("testHttp", "/test", test)
 	s.Register("receiveHeartbeatChan", "/ttl", httplogic.ReceivettlHandler)
 	s.Register("vote", "/getVote", httplogic.VoteHandler)
+	s.Register("getInfo", "/getInfo", httplogic.GetInfoHandler)
+	s.Register("setKey", "/setKey", httplogic.SetKeyHandler)
 
 	s.Run()
 }
