@@ -1,9 +1,10 @@
 #SIOR
 Simple Implementation Of Raft in Go Language With HTTP 
 
-简单实现了Raft的Election Term。 不得不说很简单
+简单实现了Raft的Election Term 与 简易版数据同步
 
 [Raft 动画演示](http://thesecretlivesofdata.com/raft/)
+
 [Raft 论文](https://web.stanford.edu/~ouster/cgi-bin/papers/raft-atc14)
 
 
