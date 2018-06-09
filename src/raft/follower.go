@@ -41,10 +41,10 @@ func NewRaftClient() *Raft {
 	return client
 }
 
+// 开启状态都是follower
 func InitRaftClient() {
 	raftClient = NewRaftClient()
 	go raftClient.candidateChecker()
-	// go raftClient.httpLogic()
 }
 
 func GetRaftClient() *Raft {
@@ -114,13 +114,11 @@ func (client *Raft) try2Leader() {
 		url := fmt.Sprintf("http://%s/getVote?term=%d", v, client.GetTerm())
 		resp, err := httpClient.Get(url)
 		if err != nil {
-			// fmt.Println(err.Error())
 			continue
 		}
 		defer resp.Body.Close()
 		body, berr := ioutil.ReadAll(resp.Body)
 		if berr != nil {
-			// fmt.Println(berr.Error())
 			continue
 		}
 		result := string(body)
@@ -137,23 +135,3 @@ func (client *Raft) try2Leader() {
 	}
 	client.IsTry2Leadering = false
 }
-
-// 启动一个协程来处理来自http的请求，例如投票
-// 解耦http接口
-// func (client *Raft) httpLogic() {
-// 	for {
-// 		select {
-// 		case term := <-client.HeartbeatChan:
-// 			try2Candidate_timer.Reset(circle)
-// 			if client.IsLeader() {
-// 				break
-// 			}
-// 			client.LastTtl = &TtlProperty{
-// 				Time: time.Now().UnixNano(),
-// 			}
-// 			fmt.Println("receive ttl from leader, still stay in follow status")
-// 			client.switch2Follower()
-// 			client.UpdateTerm(term)
-// 		}
-// 	}
-// }

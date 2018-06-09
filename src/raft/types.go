@@ -52,6 +52,7 @@ func (client *Raft) UpdateTerm(term uint64) {
 	client.Term = term
 }
 
+// 角色判定
 func (client *Raft) IsFollower() bool {
 	client.locker.Lock()
 	defer client.locker.Unlock()
@@ -60,7 +61,6 @@ func (client *Raft) IsFollower() bool {
 	}
 	return false
 }
-
 func (client *Raft) IsLeader() bool {
 	client.locker.Lock()
 	defer client.locker.Unlock()
@@ -115,6 +115,17 @@ func (client *Raft) GetLeader() string {
 		return client.LastTtl.Leader
 	}
 }
+func (client *Raft) GetKey(key string) (string, bool) {
+	if val, ok := client.Data[key]; ok {
+		return val, true
+	}
+	return "", false
+}
+func (client *Raft) WriteData(key, value string) {
+	client.DataLocker.Lock()
+	client.Data[key] = value
+	defer client.DataLocker.Unlock()
+}
 
 // candidate --> follower
 // leader不能变为follower
@@ -126,7 +137,6 @@ func (client *Raft) switch2Follower() {
 	client.locker.Lock()
 	client.Status = follower
 	defer client.locker.Unlock()
-	go raftClient.candidateChecker()
 	return
 }
 

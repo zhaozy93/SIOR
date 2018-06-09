@@ -35,7 +35,6 @@ func main() {
 	helloStr := fmt.Sprintf("Hello SIOR service %v", global.Version)
 	fmt.Println(helloStr)
 	logger.Info(helloStr)
-	//runc http server
 
 	raft.InitRaftClient()
 	httpserver.RunHttpServer()

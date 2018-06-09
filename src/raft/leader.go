@@ -2,7 +2,6 @@ package raft
 
 import (
 	"fmt"
-	"global"
 	"io/ioutil"
 	"net"
 	"net/http"
@@ -14,6 +13,8 @@ func (client *Raft) startLeaderWork() {
 	go client.startTTL()
 }
 
+// 每次心跳的时候把待添加的key以waitingKeys发送给follower，如果反馈是多数的则将对应的key移动到justAdd
+// 每次同样把justAdd的key也下发下去，这样就表示状态同步了
 func (client *Raft) startTTL() {
 	circle := time.Millisecond * time.Duration(client.Property.Heartbeat)
 	leaderTtl_timer := time.NewTimer(circle)
@@ -46,22 +47,22 @@ func (client *Raft) startTTL() {
 			} else {
 				justaddKeys = ""
 			}
-			for _, v := range client.Clusters {
-				if strings.Index(v, global.FinalPort) != -1 {
-					continue
-				}
-				httpClient := &http.Client{
-					Transport: &http.Transport{
-						Dial: func(netw, addr string) (net.Conn, error) {
-							conn, err := net.DialTimeout(netw, addr, td)
-							if err != nil {
-								return nil, err
-							}
-							conn.SetDeadline(time.Now().Add(td))
-							return conn, nil
-						},
-						ResponseHeaderTimeout: td,
+			httpClient := &http.Client{
+				Transport: &http.Transport{
+					Dial: func(netw, addr string) (net.Conn, error) {
+						conn, err := net.DialTimeout(netw, addr, td)
+						if err != nil {
+							return nil, err
+						}
+						conn.SetDeadline(time.Now().Add(td))
+						return conn, nil
 					},
+					ResponseHeaderTimeout: td,
+				},
+			}
+			for _, v := range client.Clusters {
+				if strings.Index(v, client.GetHost()) != -1 {
+					continue
 				}
 				url := fmt.Sprintf("http://%s/ttl?term=%d&leader=%s&waitingKeys=%s&justaddKeys=%s", v, client.GetTerm(), client.GetHost(), waitingKeys, justaddKeys)
 				fmt.Println(url)
@@ -81,14 +82,6 @@ func (client *Raft) startTTL() {
 				}
 			}
 			if float64(cnt)/float64(len(client.Clusters)) > 0.5 {
-				waitingKeysSlice := strings.Split(waitingKeys, "-")
-				client.DataLocker.Lock()
-				for _, key := range waitingKeysSlice {
-					if value, ok := client.WaitingData[key]; ok {
-						delete(client.WaitingData, key)
-						client.JustADD[key] = value
-					}
-				}
 				justaddKeysSlice := strings.Split(justaddKeys, "-")
 				for _, kvstr := range justaddKeysSlice {
 					kvslice := strings.Split(kvstr, ":")
@@ -97,10 +90,15 @@ func (client *Raft) startTTL() {
 						client.Data[kvslice[0]] = value
 					}
 				}
+				waitingKeysSlice := strings.Split(waitingKeys, "-")
+				client.DataLocker.Lock()
+				for _, key := range waitingKeysSlice {
+					if value, ok := client.WaitingData[key]; ok {
+						delete(client.WaitingData, key)
+						client.JustADD[key] = value
+					}
+				}
 				client.DataLocker.Unlock()
-			} else {
-				// 心跳回复一直失败，那么就失败
-				// waitingdata不允许写进去
 			}
 			leaderTtl_timer.Reset(circle)
 		}

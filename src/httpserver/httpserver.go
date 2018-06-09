@@ -51,22 +51,17 @@ func (s *SServer) Run() {
 			return
 		}
 	}
-	// if err := http.ListenAndServe(addr, mux); err != nil {
-	// 	//端口占用导致监听失败，sleep 2秒重试一次
-	// 	logger.Error("run http server fail:%s", err.Error())
-	// }
 }
 
 func RunHttpServer() {
 	s := NewServer(global.Cfg.Service.Port)
-
-	// s.Register(global.IF_ASYNCBYAREA, GetDriverByAreaAsyncHandler)
 
 	// s.Register("testHttp", "/test", test)
 	s.Register("receiveHeartbeatChan", "/ttl", httplogic.ReceivettlHandler)
 	s.Register("vote", "/getVote", httplogic.VoteHandler)
 	s.Register("getInfo", "/getInfo", httplogic.GetInfoHandler)
 	s.Register("setKey", "/setKey", httplogic.SetKeyHandler)
+	s.Register("getKey", "/getKey", httplogic.GetKeyHandler)
 
 	s.Run()
 }

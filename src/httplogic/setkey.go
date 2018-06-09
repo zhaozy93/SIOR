@@ -2,7 +2,6 @@ package httplogic
 
 import (
 	"fmt"
-	// logger "github.com/shengkehua/xlog4go"
 	"helper/context"
 	"io/ioutil"
 	"net/http"
@@ -11,12 +10,12 @@ import (
 
 // type HandlerFunc func(w http.ResponseWriter, r *http.Request, c *context.Context) int
 
+// 这个接口可能会hang住，如果key一直不被大多数follower接受
 func SetKeyHandler(w http.ResponseWriter, r *http.Request, c *context.Context) int {
 	client := raft.GetRaftClient()
 	err := r.ParseForm()
 	if err != nil {
 		fmt.Fprint(w, "false")
-		// fmt.Println("no term, vote false。 term: null")
 		return 0
 	}
 	key := r.FormValue("key")
