@@ -20,3 +20,5 @@
 2018/06/09 15:48:09 [INFO] <httpserver.go:38> run http server with addr::8888
 2018/06/09 15:48:19 [INFO] <main.go:37> Hello SIOR service 0.1
 2018/06/09 15:48:19 [INFO] <httpserver.go:38> run http server with addr::8888
+2018/06/10 15:09:04 [INFO] <main.go:37> Hello SIOR service 0.1
+2018/06/10 15:09:04 [INFO] <httpserver.go:38> run http server with addr::8888
